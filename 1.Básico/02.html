@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitema</title>
+    <style>
+        h1#text1{
+            font: normal 24pt arial;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 id="text1">Sistema de Média</h1>
+    <input type="number" name="n1" id="n1" >
+    <input type="number" name="n2" id="n2">
+    <input type="button" value="Cálcular" id="teste3" onclick="clicar()">
+    <input type="button" value="limpar" id="limpa" onclick="limpar()">
+    <div id="res">
+    </div>
+    <div id="passou">
+    </dIv>
+
+    <script>
+        function clicar(){
+        var text1=document.querySelector('input#n1')
+        var text2=document.querySelector('input#n2')
+        var n1=Number(text1.value)
+        var n2=Number(text2.value)
+        var media=(n1+n2)/2
+        var res=document.querySelector('div#res')
+        res.innerHTML=`Sua média é:${media}`
+        if(media>=7){
+            var passou=document.querySelector('div#passou')
+            passou.innerHTML="Você está aprovado"
+            passou.style.color="green"
+        }else{
+            var passou=document.querySelector('div#passou')
+            passou.innerHTML="Você está reprovado"
+            passou.style.color="red"
+        }
+        }
+        function limpar(){
+            //limpa os imput
+            document.querySelector('input#n1').value=''
+            document.querySelector('input#n2').value=''
+            //limpa as div
+            document.querySelector('div#res').innerHTML=''
+            document.querySelector('div#passou').innerHTML=''
+            //limpa o background 
+            document.querySelector('div#passou').style.background=''
+
+        }
+    </script>
+
+</body>
+</html>

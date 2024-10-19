@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#area {
+            font: normal 14pt Arial;
+            background-color: aqua;
+            color:rgb(0, 0, 0);
+            width: 200px ;
+            height: 200px ;
+            line-height:200px ;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Clica em mim...
+    </div>
+
+    <script>
+        var d=document.querySelector('div#area')
+        d.addEventListener('click',clicar)
+        d.addEventListener('mouseenter',entrar)
+        d.addEventListener('mouseout',sair)
+
+        function clicar(){
+            d.innerHTML="interaja com o mouse"
+            d.style.background="yellow"
+        }
+        function entrar(){
+            d.innerHTML="Dento :)"
+            d.style.color="black"
+            d.style.background="aqua"
+        }
+        function sair(){
+            d.innerHTML="Fora :("
+            d.style.color="white"
+            d.style.background="black"
+        }
+    </script>
+    
+</body>
+</html>
